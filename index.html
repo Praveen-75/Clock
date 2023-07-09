@@ -8,10 +8,95 @@
   <title>Clock</title>
   <link rel="stylesheet" href="Clock.css">
 </head>
+<style>
+  .container1 {
+    position: absolute;
+    top: 1%;
+    font-size: 10px;
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40em;
+    height: 15em;
+  }
+
+  .sun {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+  }
+
+  .earth,
+  .moon {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+
+  }
+
+  .earth {
+    width: 18em;
+    height: 18em;
+    animation: nitin 36.5s linear infinite;
+  }
+
+  .moon {
+    top: -2%;
+    right: 2%;
+    width: 5.5em;
+    height: 5.5em;
+    animation: nitin 5s linear infinite;
+  }
+
+  .earth::before,
+  .moon::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  .earth::before {
+    top: 1.5em;
+    right: 2.3em;
+    width: 1.5em;
+    height: 1.5em;
+    background: aqua;
+  }
+
+  .moon::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background: silver;
+  }
+
+  @keyframes nitin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
 
 <body>
   <div id="main">
     <!-- <div class="photo"><img src="/attachment_123408520-removebg-preview.png" alt=""></div> -->
+
+
+    <div class="container1">
+      <div class="sun"></div>
+      <div class="earth">
+        <div class="moon"></div>
+      </div>
+    </div>
+
+
     <div class="container">
       <div class="clock">
         <div class="circle" id="sc" style="--clr:#04fc43;"><i></i></div>
